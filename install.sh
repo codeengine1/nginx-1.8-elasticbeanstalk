@@ -21,3 +21,6 @@ yum -y remove httpd
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/davemaple/nginx-1.8-elasticbeanstalk/master/nginx.service.sh
 chmod +x /etc/init.d/nginx
 chkconfig nginx on
+
+# add sites enabled
+mkdir /etc/nginx/sites-enabled
