@@ -11,11 +11,8 @@ cd nginx*
 make
 make install
 
-# removes tomcat + httpd
+# add nginx
 useradd -r nginx
-yum -y remove tomcat8
-rm -f /etc/monit.d/monit-tomcat8.conf
-yum -y remove httpd
 
 # configure nginx
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/davemaple/nginx-1.8-elasticbeanstalk/master/nginx.service.sh
