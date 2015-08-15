@@ -24,3 +24,5 @@ chkconfig nginx on
 
 # add sites enabled
 mkdir /etc/nginx/sites-enabled
+wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/davemaple/nginx-1.8-elasticbeanstalk/master/nginx.conf
+service nginx start
