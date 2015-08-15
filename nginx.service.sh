@@ -1,5 +1,15 @@
 #!/bin/sh
 
+### BEGIN INIT INFO
+# Provides:          nginx
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: nginx initscript
+# Description:       nginx
+### END INIT INFO
+
 # Source function library.
 . /etc/rc.d/init.d/functions
 
