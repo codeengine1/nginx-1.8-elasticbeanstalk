@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # add dependencies
-sudo yum install gcc-c++ pcre-devel zlib-devel make wget openssl-devel libxml2-devel libxslt-devel gd-devel perl-ExtUtils-Embed GeoIP-devel gperftools-devel
+yum -y install gcc-c++ pcre-devel zlib-devel make wget openssl-devel libxml2-devel libxslt-devel gd-devel perl-ExtUtils-Embed GeoIP-devel gperftools-devel
 
 # install nginx
 wget http://nginx.org/download/nginx-1.8.0.tar.gz
@@ -12,11 +12,12 @@ make
 make install
 
 # removes tomcat + httpd
-sudo useradd -r nginx
+useradd -r nginx
 yum -y remove tomcat8
 rm -f /etc/monit.d/monit-tomcat8.conf
 yum -y remove httpd
 
 # configure nginx
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/davemaple/nginx-1.8-elasticbeanstalk/master/nginx.service.sh
+chmod +x /etc/init.d/nginx
 chkconfig nginx on
